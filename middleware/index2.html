@@ -1,0 +1,102 @@
+<html>
+<head>
+    <title>Magesh - MEAN STACK SAMPLE USE CASE </title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+
+    <script src="js/libs/uuid.js"></script>
+    <script src="js/libs/json2.js"></script>
+    <script type="text/javascript" src="js/libs/jquery.min.js"></script>
+    <script type="text/javascript" src="js/libs/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/libs/scripts.js"></script>
+
+</head>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>
+    <script src="angController/userController.js"></script>
+
+<script type="text/javascript">
+    
+    function Phone(){
+        this.mobile = '';
+        this.landline = '';
+        this.home = '';
+        return this;
+    }
+    //define simple model object
+    function User(){
+        this.fName = '';
+        this.lName = '';
+        this.phone = '';
+        return this;
+    }
+
+
+</script>
+
+<body ng-app='userApp'>
+ <div class="container">
+    <div class="row clearfix">
+        <!-- Form data-->
+        <div class="col-md-6 column">
+           <div class="form-group"> 
+
+             <span >First Name : </span> 
+                <input type="text" name="fName" id="fName" class="form-control" value="" required="required" pattern="" title="" ng-model="user.fName">
+                <span >Last Name : </span> 
+                <input type="text" name="lName" id="lName" class="form-control" value="" required="required" pattern="" title="" ng-model="user.lName">
+                 </hr>
+                <span >Mobile Phone # : </span> 
+                <input type="text" name="mphone" id="mphone" class="form-control" value="" required="required" pattern="" title="" ng-model="user.phone.mobile">
+                <span >Landline Phone # : </span> 
+                <input type="text" name="lphone" id="lphone" class="form-control" value="" required="required" pattern="" title="" ng-model="user.phone.landline">
+                <span >Home Phone # : </span> 
+                <input type="text" name="hphone" id="hphone" class="form-control" value="" required="required" pattern="" title="" ng-model="user.phone.home">
+                 <span > Request Status :</span> 
+                <input type="text" name="message" id="message" class="form-control" value="" required="required" pattern="" title="" ng-model='message'> 
+                <button type="submit" class="btn btn-primary" ng-click="addUser()">Add User</button>
+
+           </div> 
+        </div>
+        <!-- Table data -->
+        <div class="col-md-6 column">
+           <button type="submit" class="btn btn-success" ng-click="listAllUsers()">List All Users</
+           <input type="text" name="fuser" id="fuser" class="form-control" value="" required="required" pattern="" title="" ng-model="findUser">  
+           <button type="submit" class="btn btn-success" ng-click="findUserByFirstName()"> Find User</button>
+
+           <tr>
+           <td> Search by : </td> 
+           <td> 
+            <input type="text" name="search" id="search" class="form-control" value="" required="required" pattern="" title="" ng-model="search">  
+            </td>
+           </tr> 
+
+           <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>First Name </th> <th>Last Name </th>  <th>Mobile Phone</th>  <th>Landline Phone</th>  <th>Home Phone </th> 
+                    </tr>
+                    
+                </thead>
+                <tbody>
+                        <tr ng-repeat="user in listOfUsers | filter:search" class="item">
+                            
+                            <td>{{user.firstName}}</td>  <td>{{user.lastName}}</td>   <td>{{user.phone.mphone}}</td>  <td>{{user.phone.lphone}}</td>  <td>{{user.phone.hphone}}</td> 
+                        </tr>
+                        </tr>
+                </tbody>
+             </table>
+        </div>
+    </div>
+</div>   
+    
+</body>
+
+
+</html>

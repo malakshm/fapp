@@ -1,0 +1,53 @@
+#container{
+	background-color: gray;
+	height: 100%;
+	width: 100%;
+}
+
+#navDIV {
+	background-color: #FF9900;
+	position: absolute;
+	top: 75;
+	left: 2;
+	height: 8%;
+	width: 98%;
+
+}
+#footerDIV {
+	background-color: #FF9900;
+	position: absolute;
+	bottom: 2;
+	left: 2;
+	height: 5%;
+	width: 98%;	
+
+}
+#headerDIV {
+	background-color: #FF9900;
+	position: absolute;
+	top: 2;
+	left: 2;
+	height: 10%;
+	width: 98%;
+	
+}
+#sideDIV {
+	background-color: #FF9900;
+	position: absolute;
+	top: 130;
+	left: 2;
+	width: 8%;
+	height :72%;
+}
+
+#contentDIV {
+	background-color: #FF9900;
+	width: 88%;
+	height: 72%;	
+	margin-bottom: 100;
+	position: relative;
+	left: 100;
+	top: 130;
+
+	
+}

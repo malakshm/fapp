@@ -1,0 +1,126 @@
+<html>
+<head>
+    <title>Events</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+
+
+    <script src="/js/libs/uuid.js"></script>
+    <script src="/js/libs/json2.js"></script>
+    <script src="/js/libs/angular.js"></script>
+
+    <script type="text/javascript">
+        //define angular module
+        var feedbackApp = angular.module("feedbackApp",['ui.mask']);
+    </script>
+
+    <script src="/js/libs/ui-utils.min.js"></script>
+    <script src="/angController/eventsController.js"></script>
+     <script src="/angController/userController.js"></script>
+    <script src="/jsmodels/feedbackModel.js"></script>
+
+    <style type="text/css">
+        .eventTabContent .eventsTab .tab-pane {
+
+            border-left: 1px solid blue;
+            border-right: 1px solid blue;
+            border-bottom: 1px solid blue;
+            border-radius: 0px 0px 5px 5px;
+            border:solid 1px blue;
+            padding: 10px;
+            background-color: yellow
+        }
+
+        .nav-tabs {
+            margin-bottom: 0;
+        }
+
+        #eventTabContent { border-color: blue}
+        #eventsTab li.active a { background-color: grey}
+    </style>
+
+    
+<body ng-app='feedbackApp'>
+
+
+  
+   <div class="container" ng-controller="eventsController">   
+        <div  id="event">
+            <div class="col-md-6 column">
+            <form role="form" class="form-horizontal"> 
+            <div class="form-group"> 
+                <label for="eName">Event Name :</label>
+                <input type="text" name="eName" id="eName" class="form-control" value="" required="required" pattern="" title="" ng-model="feedbackEvent.name">
+                <span >Event Category : </span> 
+                <input type="text" name="eCat" id="eCat" class="form-control" value="" required="required" pattern="" title="" ng-model="feedbackEvent.category">
+                <span >Event Date: </span> 
+                <input type="text" name="eDate" id="eDate" class="form-control" value="" required="required" pattern="" title="" ng-model="feedbackEvent.dateOfEvent">
+                <span >Start Time : </span> 
+                <input type="text" name="eStime" id="eStime" class="form-control" value="" required="required" pattern="" title="" ng-model="feedbackEvent.startTime">
+                <span >End Time : </span> 
+                <input type="text" name="eEtime" id="eEtime" class="form-control" value="" required="required" pattern="" title="" ng-model="feedbackEvent.endTime">
+
+                
+                <span > Request Status :</span> 
+                <input type="text" name="message" id="message" class="form-control" value="" required="required" pattern="" title="" ng-model='message' ng-readonly="true">
+
+                
+            </div>    
+           </form> 
+         </div>   
+        </div>   
+        <button type="submit" class="btn btn-primary" ng-click="addEvent()">Add Event</button>
+        
+    </div>
+
+    <h1>
+
+ <div class="container" ng-controller="userController">
+            <div class="col-md-6 column">
+                <button type="submit" class="btn btn-success" ng-click="listAllUsers()">List All Users</button>
+
+
+                <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th> Select </th> <th>First Name </th> <th>Last Name </th>  <th>Mobile Phone</th>  <th>Landline Phone</th>  <th>Home Phone </th>  
+                    </tr>
+                    
+                </thead>
+                <tbody>
+                    <tr ng-repeat="user in listOfUsers | filter:search" class="item  fade-in" >
+                        
+                        <td> 
+                        <button type="submit" class="btn btn-info" ng-click="addToEvent(user)">Add Participant</button>
+                        </td> 
+                        <td>{{user.firstName}}</td>  <td>{{user.lastName}}</td>   <td>{{user.phone.mphone}}</td>  <td>{{user.phone.lphone}}</td>  <td>{{user.phone.hphone}}</td> 
+                    </tr>
+                    </tr>
+                </tbody>
+             </table>
+            </div>    
+         </div>
+
+
+</div> <!-- end of container div -->
+
+
+
+
+
+
+
+    
+         
+
+    
+</body>
+
+
+</html>

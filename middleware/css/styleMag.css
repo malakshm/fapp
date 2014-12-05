@@ -1,0 +1,93 @@
+body{
+	background-color:rgb(106,202,219);
+	color : white;
+}
+.wapper{
+	widtdh:98%;
+	height:96%;
+	background-color:rgb(106,202,219);
+}
+.header{
+	width:98%;
+	height:6%;
+	border-style: solid;
+	border-color:yellow;
+}
+.navigation{
+	width:98%;
+	height:6%;
+	border-style: solid;
+	border-color:yellow;
+}
+.sideNav{
+	width:15%;
+	height:76%;
+	border-style: solid;
+	border-color:yellow;
+	float : left;
+
+}
+.menu ul li a{
+	text-decoration : none;
+	color:white;
+}
+.sideNav-1{
+	text-decoration : none;
+	color : white;
+	width : 80%
+}
+.sideNav ul li{
+	display : inline;
+	float : right;
+	padding : 0.7em;
+	color : white;
+}
+.menu ul li {
+	display : inline;
+	float : right;
+	padding : 0.7em;
+	color : white;
+}
+.main{
+	width : 84%;
+	height : 76%;
+	float : right;
+	border-style: solid;
+	border-color:red;
+}
+.Maincontent-1{
+	width : 15%;
+	height : 20%;
+	float : left;
+	border-style: dotted;
+	border-color:white;
+	
+}
+.Maincontent-2{
+	width : 60%;
+	height : 20%;
+	float : left;
+	border-style: dotted;
+	border-color:white;
+
+}
+.Maincontent-3{
+	width : 20%;
+	height : 20%;
+	float : left;
+	border-style: dotted;
+	border-color:white;
+
+}
+.Maincontent-4{
+	width : 60%;
+	padding: .5em;
+	float : left;
+}
+.footer{
+	width:100%;
+	height:4%;
+	border-style: solid;
+	border-color:yellow;
+	float : left;
+}

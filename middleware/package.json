@@ -1,0 +1,20 @@
+{
+  "name": "SimpleUseCase",
+  "version": "1.0.0",
+  "description": "Simple project",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Magesh Lakshmi",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.9.2",
+    "cookie-parser": "^1.3.3",
+    "cors": "^2.5.2",
+    "express": "^4.10.2",
+    "express-session": "^1.9.1",
+    "method-override": "^2.3.0",
+    "mongoose": "^3.8.19",
+    "morgan": "^1.5.0"
+  }
+}
